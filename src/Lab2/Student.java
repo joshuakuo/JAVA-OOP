@@ -9,7 +9,7 @@ public class Student {
 	
 	String name;
 	String ssn;
-	private static int id = 1001;
+	private static int id = 1000;
 	String userID;
 	String emailID;
 	String phone;
@@ -30,9 +30,9 @@ public class Student {
 		int range = (9000 -1000) + 1;
 		int r = (int) (Math.random() * range) + 1000;
 
-		emailID = name.replace(" ", ".") + "@university.edu";		
+		emailID = name.replace(" ", ".").toLowerCase() + "@university.edu";		
 		userID = id + "" + r + "" + ssn.substring(5);
-		
+		id++;
 	}
 
 	public void enroll(double amount) {
@@ -62,7 +62,7 @@ public class Student {
 	
 	@Override
 	public String toString() {
-		return "Name : " +name+ "\nEmail : " +emailID+ "\nUser ID : " +userID+ "\nPhone : " +phone+ "\nCity : " +city+ "\nState : " +state ;
+		return "Name : " +name+ "\nEmail : " +emailID+ "\nUser ID : " +userID+ "\nPhone : " +phone+ "\nCity : " +city+ "\nState : " +state;
 	}
 	
 
